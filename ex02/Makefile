@@ -6,7 +6,7 @@
 #    By: nseon <nseon@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 10:54:16 by nseon             #+#    #+#              #
-#    Updated: 2025/12/12 09:30:30 by nseon            ###   ########.fr        #
+#    Updated: 2025/12/17 17:43:40 by nseon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,9 @@ DEP			=	$(patsubst %.cpp, $(MAKE_DIR)%.d, $(SRC))
 SRC			=	main.cpp \
 				Bureaucrat.cpp \
 				AForm.cpp \
+				PresidentialPardonForm.cpp \
+				RobotomyRequestForm.cpp \
+				ShrubberyCreationForm.cpp \
 
 # --------------INCLUDES------------- #
 
@@ -36,7 +39,7 @@ INCLUDES	=	$(INCS_DIR)
 # --------------CONFIGS-------------- #
 
 CC			=	c++
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -g3 -Weverything -Wno-suggest-override -Wno-suggest-destructor-override -Wno-padded
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -g3 -Weverything -Wno-suggest-override -Wno-suggest-destructor-override -Wno-padded -Wno-address-of-temporary
 CPPFLAGS	=	-MMD -MP $(addprefix -I, $(INCLUDES))
 
 # --------------TARGETS-------------- #

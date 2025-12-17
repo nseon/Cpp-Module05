@@ -6,9 +6,11 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:46:23 by nseon             #+#    #+#             */
-/*   Updated: 2025/12/12 19:55:40 by nseon            ###   ########.fr       */
+/*   Updated: 2025/12/17 17:15:10 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <fstream>
 
 #include "ShrubberyCreationForm.hpp"
 
@@ -31,3 +33,18 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {}
 
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+{
+	if (!getIs_signed())
+		throw UnsignedForm();
+	if (executor.getGrade() <= 137)
+	{
+		std::string	*ptr = const_cast<std::string*>(&getName());
+		std::ofstream out((*ptr + "_shruberry").c_str());
+		
+		out << TREE << std::endl;
+		out << TREE << std::endl;
+	}
+	else
+		throw GradeTooLowException();
+}

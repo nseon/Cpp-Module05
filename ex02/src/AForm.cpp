@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 11:31:31 by nseon             #+#    #+#             */
-/*   Updated: 2025/12/12 20:28:42 by nseon            ###   ########.fr       */
+/*   Updated: 2025/12/17 16:50:38 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,12 @@ const char* AForm::GradeTooHighException::what() const throw()
 	return ("Grade is too high");
 }
 
+const char* AForm::UnsignedForm::what() const throw()
+{
+	return ("Form is unsigned");
+}
+
+
 void AForm::beSigned(Bureaucrat &signatory)
 {
 	if (signatory.getGrade() <= _min_to_sign)
@@ -89,6 +95,3 @@ std::ostream &operator<<(std::ostream &os, AForm &m)
 	<< " | Min grade to exec : " << m.getMin_to_exec() << ")" << std::endl;
 	return (os);
 }
-
-void AForm::execute(Bureaucrat const & executor)
-{}

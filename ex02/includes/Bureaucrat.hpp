@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 09:12:03 by nseon             #+#    #+#             */
-/*   Updated: 2025/12/12 10:53:47 by nseon            ###   ########.fr       */
+/*   Updated: 2025/12/17 16:59:05 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ class Bureaucrat{
 		void setGrade(int n_grade);
 		
 		void signForm(AForm &form);
+		void executeForm(AForm const & form) const;
 
 		class GradeTooLowException : public std::exception {
 			public:

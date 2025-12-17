@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:46:23 by nseon             #+#    #+#             */
-/*   Updated: 2025/12/12 20:00:37 by nseon            ###   ########.fr       */
+/*   Updated: 2025/12/17 17:12:21 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,15 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {}
+
+void PresidentialPardonForm::execute(Bureaucrat const & executor) const
+{
+	if (!getIs_signed())
+		throw UnsignedForm();
+	if (executor.getGrade() <= 5)
+		std::cout << getName() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+	else
+		throw GradeTooLowException();
+}
+
 

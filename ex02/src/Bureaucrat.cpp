@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 09:11:48 by nseon             #+#    #+#             */
-/*   Updated: 2025/12/12 11:03:43 by nseon            ###   ########.fr       */
+/*   Updated: 2025/12/17 17:06:37 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,3 +114,13 @@ void Bureaucrat::signForm(AForm &form)
 	}
 }
 
+void Bureaucrat::executeForm(AForm const & form) const
+{
+	try {
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout << _name << " failed to execute " << form.getName() << "for the following reason: " << e.what() << std::endl;
+	}
+}

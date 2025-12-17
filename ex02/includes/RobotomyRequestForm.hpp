@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 10:04:48 by nseon             #+#    #+#             */
-/*   Updated: 2025/12/12 19:59:18 by nseon            ###   ########.fr       */
+/*   Updated: 2025/12/17 16:28:42 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,6 @@ class RobotomyRequestForm : public AForm {
 		RobotomyRequestForm(RobotomyRequestForm const &m);
 		RobotomyRequestForm &operator=(RobotomyRequestForm const &m);
 		~RobotomyRequestForm();
+		
+		void execute(Bureaucrat const & executor) const;
 };

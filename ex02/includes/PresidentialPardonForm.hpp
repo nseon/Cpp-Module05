@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 10:04:48 by nseon             #+#    #+#             */
-/*   Updated: 2025/12/12 20:00:19 by nseon            ###   ########.fr       */
+/*   Updated: 2025/12/17 16:28:44 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,6 @@ class PresidentialPardonForm : public AForm {
 		PresidentialPardonForm(PresidentialPardonForm const &m);
 		PresidentialPardonForm &operator=(PresidentialPardonForm const &m);
 		~PresidentialPardonForm();
+		
+		void execute(Bureaucrat const & executor) const;
 };
