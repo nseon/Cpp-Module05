@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:46:23 by nseon             #+#    #+#             */
-/*   Updated: 2025/12/17 17:49:27 by nseon            ###   ########.fr       */
+/*   Updated: 2025/12/18 11:02:41 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	if (executor.getGrade() <= 45)
 	{
 		std::cout << "* DRILLING NOISES *" << std::endl;
-		if (rand() % 2)
+		if (std::rand() % 2)
 			std::cout << getName() << " has been robotomized successfully" << std::endl;
 		else
 			std::cout << "robotomy failed" << std::endl;

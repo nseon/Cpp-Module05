@@ -6,11 +6,13 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 09:09:06 by nseon             #+#    #+#             */
-/*   Updated: 2025/12/17 17:48:02 by nseon            ###   ########.fr       */
+/*   Updated: 2025/12/18 11:01:17 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <ctime>
+#include <cstdlib>
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
@@ -20,6 +22,8 @@
 
 int main()
 {
+	std::srand(static_cast<unsigned int>(std::time(NULL)));
+	
 	Bureaucrat	a("The boss", 1);
 	Bureaucrat	b;
 	
