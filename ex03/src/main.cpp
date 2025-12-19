@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 09:09:06 by nseon             #+#    #+#             */
-/*   Updated: 2025/12/18 11:11:07 by nseon            ###   ########.fr       */
+/*   Updated: 2025/12/19 10:24:41 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,32 +19,37 @@
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
 	std::srand(static_cast<unsigned int>(std::time(NULL)));
 	
-	Bureaucrat	a("The boss", 1);
-	Bureaucrat	b;
+	Bureaucrat	boss("The boss", 1);
+	Intern		intern;
+	AForm		*Rform = intern.makeForm("robotomy request", "Bender");
+	AForm		*Sform = intern.makeForm("shrubbery creation", "Home");
+	AForm		*Pform = intern.makeForm("presidential pardon", "Criminal");
 	
-	PresidentialPardonForm P("Criminal");
-	ShrubberyCreationForm S("Garden");
-	RobotomyRequestForm R("Nico");
+	if (Rform != NULL)
+	{
+		boss.signForm(*Rform);
+		boss.executeForm(*Rform);
+		delete Rform;
+	}
 	
-	b.executeForm(P);
-	b.signForm(P);
-	a.signForm(P);
-	a.signForm(S);
-	a.signForm(R);
-	b.executeForm(S);
-	b.executeForm(R);
-	a.executeForm(P);
-	a.executeForm(S);
-	a.executeForm(S);
-	a.executeForm(R);
-	a.executeForm(R);
-	a.executeForm(R);
-	a.executeForm(R);
-	a.executeForm(R);
+	if (Sform != NULL)
+	{
+		boss.signForm(*Sform);
+		boss.executeForm(*Sform);
+		delete Sform;
+	}
+	
+	if (Pform != NULL)
+	{
+		boss.signForm(*Pform);
+		boss.executeForm(*Pform);
+		delete Pform;
+	}
 	return (0);
 }
