@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:46:23 by nseon             #+#    #+#             */
-/*   Updated: 2025/12/18 11:02:41 by nseon            ###   ########.fr       */
+/*   Updated: 2026/01/07 11:41:07 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 RobotomyRequestForm::RobotomyRequestForm() : AForm("Default", 72, 45)
 {}
 
-RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : AForm(target, 145, 137)
+RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : AForm(target, 72, 45)
 {}
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &m) : AForm(m)

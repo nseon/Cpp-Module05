@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:46:23 by nseon             #+#    #+#             */
-/*   Updated: 2025/12/17 17:12:21 by nseon            ###   ########.fr       */
+/*   Updated: 2026/01/07 11:41:00 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 PresidentialPardonForm::PresidentialPardonForm() : AForm("Default", 25, 5)
 {}
 
-PresidentialPardonForm::PresidentialPardonForm(std::string const &target) : AForm(target, 145, 137)
+PresidentialPardonForm::PresidentialPardonForm(std::string const &target) : AForm(target, 25, 5)
 {}
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &m) : AForm(m)
